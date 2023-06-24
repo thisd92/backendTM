@@ -5,7 +5,7 @@ const port = 8090;
 
 const mongoose = require('mongoose');
 
-const routes = require('./routes/routes')
+const routes = require('../routes/routes')
 
 const userMongoDB = process.env.MONGODB_USER
 const passMongoDB = process.env.MONGODB_PASSWORD
