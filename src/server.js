@@ -30,7 +30,7 @@ app.listen(port, () => {
 
 async function main() {
     await mongoose.connect(
-        process.env.MONGODB_URI,
+        process.env.MONGODB_URL,
         { useNewUrlParser: true, useUnifiedTopology: true }
     )
         .then(() => {
