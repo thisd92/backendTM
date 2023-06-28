@@ -22,9 +22,8 @@ main().catch(err => { console.log(err) })
 app.use(express.json());
 
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://frontend-tm-nu.vercel.app/");
+    res.header("Access-Control-Allow-Origin", "https://frontend-tm-nu.vercel.app");
     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-    app.use(cors());
     next();
 });
 
@@ -49,7 +48,7 @@ async function main() {
 
 
 router.use(cors({
-    origin: 'https://frontend-tm-nu.vercel.app/',
+    origin: 'https://frontend-tm-nu.vercel.app',
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
