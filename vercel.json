@@ -10,10 +10,6 @@
         {
             "src": "/routes",
             "dest": "/routes.js"
-        },
-        {
-            "src": "(.*)",
-            "dest": "src/server.js"
         }
     ]
 }
