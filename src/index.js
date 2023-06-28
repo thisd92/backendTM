@@ -15,9 +15,6 @@ const mongoose = require('mongoose');
 
 const SECRET = process.env.JWT_SECRET
 
-const userMongoDB = process.env.MONGODB_USER
-const passMongoDB = process.env.MONGODB_PASSWORD
-
 const router = express.Router()
 
 main().catch(err => { console.log(err) })
@@ -40,7 +37,7 @@ app.listen(port, () => {
 
 async function main() {
     await mongoose.connect(
-        'mongodb+srv://root:2lca9bsTMwxwlgsc@projectmanager.kdmqr7g.mongodb.net/?retryWrites=true&w=majority',
+        process.env.MONGODB_URL,
         { useNewUrlParser: true, useUnifiedTopology: true }
     )
         .then(() => {
