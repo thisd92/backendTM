@@ -49,7 +49,7 @@ async function main() {
 
 
 router.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://frontend-tm-nu.vercel.app/',
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
