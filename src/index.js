@@ -266,7 +266,7 @@ router.post('/usersLogin', async (req, res, next) => {
         res.status(200)
             .cookie('authorization', token, {
                 httpOnly: false,
-                secure: true,
+                secure: false,
                 sameSite: 'None'
             })
             .json(token);
