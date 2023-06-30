@@ -21,6 +21,8 @@ main().catch(err => { console.log(err) })
 
 app.use(express.json());
 
+app.use(cookieParser())
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://frontend-tm-nu.vercel.app");
     res.header('Access-Control-Allow-Credentials', true);
@@ -55,8 +57,6 @@ router.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 }));
-
-router.use(cookieParser())
 
 function createToken(user) {
     const token = jwt.sign({ id: user._id, company: user.company, email: user.email, name: user.name }, SECRET)
