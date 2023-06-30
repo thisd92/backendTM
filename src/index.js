@@ -48,7 +48,7 @@ async function main() {
 
 
 router.use(cors({
-    origin: 'https://frontend-tm-nu.vercel.app',
+    origin: ['https://frontend-tm-nu.vercel.app', 'http://localhost:3000'],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
@@ -57,7 +57,8 @@ router.use(cors({
 router.use(cookieParser())
 
 function createToken(user) {
-    return jwt.sign({ id: user._id, company: user.company, email: user.email, name: user.name }, SECRET)
+    const token = jwt.sign({ id: user._id, company: user.company, email: user.email, name: user.name }, SECRET)
+    return token
 }
 
 function readToken(token) {
